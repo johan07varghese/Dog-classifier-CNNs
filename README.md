@@ -2,7 +2,7 @@
 Classify the image of the dog into 1 of 133 different dog breeds using CNN (Keras)
 
 Download the dog dataset. Unzip the folder and place it in the repo, at location /dogImages.
-https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
+- https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
 
 ## Pre-process the Data
 When using TensorFlow as backend, Keras CNNs require a 4D array (which we'll also refer to as a 4D tensor) as input, with shape
@@ -26,4 +26,7 @@ First, we need to talk about transfer learning. Imagine you trained a neuronal n
 To do transfer learning, you will remove the last fully connected layer from the model and plug in your layers there. The "truncated" model output is going to be the features that will fill your "model". Those are the bottleneck features.
 
 I used transfer learning to create a CNN that can identify dog breed from images.I used the bottleneck features from the Xception model which was pretrained on the Imagenet dataset. The train set is small and similar, an so I slice off the end of the network by adding a global average pooling layer and a fully connected layer with 133 nodes.
+
+Bottleneck features for the Xceotion model can be downloaded from,
+- https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogXceptionData.npz
 
